@@ -73,14 +73,13 @@ header li:nth-child(n + 2) {
 }
 
 section {
-  margin: 30px 0;
-  height: 100px;
+  margin: 10px 0;
+  height: 300px;
   position: relative;
-  left: -3px;
-  width: 806px;
+  left: -10px;
+  width: 800px;
   overflow-x: auto;
-  direction: rtl;
-  text-align: left;
+  text-align: right;
 }
 section .list {
   margin-left: 20px;

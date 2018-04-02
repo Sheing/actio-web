@@ -10,7 +10,7 @@
   
       <link rel="stylesheet" href="css/style.css">
 
-  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
       </li>
       <li class="hp ps-right-top-to-bottom"> 
         <div class="text">HP </div>
-        <div class="value">100/100</div>
+        <div class="value">200/200</div>
       </li>
       <li class="ap ps-right-top-to-bottom"> 
         <div class="text">AP</div>
@@ -40,10 +40,9 @@
   </header>
   <section> 
     <div class="list">
-      <ul>
-        <li>......COMING SOON</li>
-        <li>[SIGN UP] [____________________]</li>
-      </ul>
+
+        <canvas id ='oldSkool'></canvas>
+
     </div>
   </section>
   <footer class="ps-bottom-to-top">
@@ -57,7 +56,74 @@
 </main>
 <!-- Articles: -->
 <!-- http://aleclownes.com/2017/02/01/crt-display.html-->
+<script>
+  var db = document.body;
+  var c = document.getElementById('oldSkool');
+  var $ = c.getContext('2d');
+  c.style.textAlign = "center";
+  var resume;
+  function relay(){
+  window.requestAnimationFrame(relay);
+  resume();
+}
+</script>
+  <!--Script to Relay!-->
+  <script id="test">
+//ACTIO.ME COMING SOON 2018 @ InciteGO LLC
+
+/*/////////////////////////////////////////////////////
+    ___    ______ ______ ____ ____      __  ___ ______
+   /   |  / ____//_  __//  _// __ \    /  |/  // ____/
+  / /| | / /      / /   / / / / / /   / /|_/ // __/   
+ / ___ |/ /___   / /  _/ / / /_/ /_  / /  / // /___   
+/_/  |_|\____/  /_/  /___/ \____/(_)/_/  /_//_____/   
+                                                      
+
+*////////////////////////////////////////////////////
+  </script> 
+
+
+<script>
+  //BEGIN SCRIPT RELAY TO CODEPEN.IO... 
   
+  _s = db.querySelectorAll("script")[1].innerHTML.split("\n");
+  console.log(_s);
+  x = 0; 
+  y = 1; 
+  c.width = w = window.innerWidth;
+  c.height = h = _s.length*20;
+  db.style.margin = 0;
+  db.style.background = "hsla(0,0%,0%,1)";
+  db.style.overflow = "hidden";
+  $.textBaseline = "top";
+  $.font = "1.1em monospace";
+  
+
+  
+resume = function(){
+    $.globalCompositeOperation = "source-over";
+    $.shadowBlur = 0; $.fillStyle = "hsla(0,0%,0%,0.4)";
+    $.fillRect(0,0,w,h);
+    $.shadowColor = "hsla(120,100%,50%,0.5)";
+    $.shadowBlur = 9; $.fillStyle = "hsla(120,100%,20%,1)";
+    $.globalCompositeOperation = "lighter";
+  _s.forEach(function(t, i) {
+      if (i <= y) {
+        if (i == y) { t = t.substr(0, x); }
+        $.fillText(t, 60, 20+i*16);   }
+  });
+                 
+  $.fillStyle = "hsla(120,100%,50%,1)";
+  $.fillRect(100+$.measureText(_s[y].substr(0, x)).width, 102+y*16, 10, 14);
+  x++;
+    if (x >= _s[y].length) { y++; x = 0;}
+      if (y*16 > innerHeight-400) { $.translate(0, -0.5);}
+        if (y >= _s.length-1) { window.clearInterval();}}
+  
+relay();
+  
+//END SCRIPT RELAY _
+</script>
   
 
 </body>
